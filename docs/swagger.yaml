@@ -1,0 +1,46 @@
+definitions:
+  response.ErrorResponse:
+    properties:
+      details:
+        type: string
+      message:
+        type: string
+      status:
+        type: integer
+    type: object
+info:
+  contact: {}
+paths:
+  /fail:
+    get:
+      consumes:
+      - application/json
+      description: Returns a simulated HTTP error response
+      parameters:
+      - description: HTTP status code to return
+        in: query
+        name: status
+        type: integer
+      - description: Delay in milliseconds before responding
+        in: query
+        name: delay
+        type: integer
+      - description: Custom error message
+        in: query
+        name: message
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/response.ErrorResponse'
+        default:
+          description: ""
+          schema:
+            $ref: '#/definitions/response.ErrorResponse'
+      summary: Simulate HTTP error
+      tags:
+      - fail
+swagger: "2.0"

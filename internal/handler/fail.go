@@ -9,6 +9,18 @@ import (
 	"failgen/internal/response"
 )
 
+// FailHandler handles error simulation requests
+// @Summary Simulate HTTP error
+// @Description Returns a simulated HTTP error response
+// @Tags fail
+// @Accept json
+// @Produce json
+// @Param status query int false "HTTP status code to return"
+// @Param delay query int false "Delay in milliseconds before responding"
+// @Param message query string false "Custom error message"
+// @Success 200 {object} response.ErrorResponse
+// @Failure default {object} response.ErrorResponse
+// @Router /fail [get]
 func FailHandler(w http.ResponseWriter, r *http.Request) {
 	query := r.URL.Query()
 

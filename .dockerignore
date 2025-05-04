@@ -1,0 +1,27 @@
+failgen
+
+# Dependency files
+vendor/
+go.sum
+
+# OS / Editor / Tooling
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# Git
+.git
+.gitignore
+
+# Tests / Coverage / Output
+*.out
+*.test
+coverage.*
+
+# Docs (generated)
+docs/*
+!docs/openapi.yaml
