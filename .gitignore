@@ -1,0 +1,8 @@
+go.sum
+go.mod
+*.exe
+*.out
+*.test
+.DS_Store
+.idea/
+.env
